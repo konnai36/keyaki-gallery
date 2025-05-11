@@ -25,16 +25,10 @@
   <body>
     <div id="map"></div>
     <script>
-      const imageData = [
-        { filename: "photo001.jpg", lat: 35.557634, lng: 139.559936 },
-        { filename: "photo002.jpg", lat: 35.557609, lng: 139.559870 },
-        { filename: "photo003.jpg", lat: 35.557540, lng: 139.559800 }
-      ];
-
       async function initMap() {
-        const center = { lat: 35.5575, lng: 139.5606 };
+        const center = { lat: 35.545522311643026, lng: 139.56139075253876 };
         const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 17,
+          zoom: 18,
           center,
         });
         const infoWindow = new google.maps.InfoWindow();
@@ -47,27 +41,1163 @@
           console.warn("captions.json 読み込み失敗:", e);
         }
 
-        imageData.forEach((item, index) => {
-          const marker = new google.maps.Marker({
-            position: { lat: item.lat, lng: item.lng },
+        
+        new google.maps.Marker({
+            position: { lat: 35.54557231164303, lng: 139.56139075253876 },
             map,
-            title: item.filename
-          });
-
-          const captionText = captions[index] || item.filename;
-
-          const content = `
-            <div class="info-content">
-              <strong>${captionText}</strong>
-              <br>
-              <img src="images/${item.filename}" alt="${item.filename}">
-            </div>
-          `;
-
-          marker.addListener("click", () => {
-            infoWindow.setContent(content);
-            infoWindow.open(map, marker);
-          });
+            title: "photo001.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[0] || 'photo001.jpg'}</strong><br>
+                <img src="images/photo001.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54562231164303, lng: 139.56139075253876 },
+            map,
+            title: "photo002.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[1] || 'photo002.jpg'}</strong><br>
+                <img src="images/photo002.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545672311643024, lng: 139.56139075253876 },
+            map,
+            title: "photo003.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[2] || 'photo003.jpg'}</strong><br>
+                <img src="images/photo003.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545722311643026, lng: 139.56139075253876 },
+            map,
+            title: "photo004.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[3] || 'photo004.jpg'}</strong><br>
+                <img src="images/photo004.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54577231164303, lng: 139.56139075253876 },
+            map,
+            title: "photo005.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[4] || 'photo005.jpg'}</strong><br>
+                <img src="images/photo005.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54582231164303, lng: 139.56139075253876 },
+            map,
+            title: "photo006.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[5] || 'photo006.jpg'}</strong><br>
+                <img src="images/photo006.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54587231164302, lng: 139.56139075253876 },
+            map,
+            title: "photo007.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[6] || 'photo007.jpg'}</strong><br>
+                <img src="images/photo007.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545922311643025, lng: 139.56139075253876 },
+            map,
+            title: "photo008.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[7] || 'photo008.jpg'}</strong><br>
+                <img src="images/photo008.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54597231164303, lng: 139.56139075253876 },
+            map,
+            title: "photo009.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[8] || 'photo009.jpg'}</strong><br>
+                <img src="images/photo009.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545522311643026, lng: 139.56144075253874 },
+            map,
+            title: "photo010.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[9] || 'photo010.jpg'}</strong><br>
+                <img src="images/photo010.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54557231164303, lng: 139.56144075253874 },
+            map,
+            title: "photo011.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[10] || 'photo011.jpg'}</strong><br>
+                <img src="images/photo011.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54562231164303, lng: 139.56144075253874 },
+            map,
+            title: "photo012.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[11] || 'photo012.jpg'}</strong><br>
+                <img src="images/photo012.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545672311643024, lng: 139.56144075253874 },
+            map,
+            title: "photo013.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[12] || 'photo013.jpg'}</strong><br>
+                <img src="images/photo013.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545722311643026, lng: 139.56144075253874 },
+            map,
+            title: "photo014.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[13] || 'photo014.jpg'}</strong><br>
+                <img src="images/photo014.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54577231164303, lng: 139.56144075253874 },
+            map,
+            title: "photo015.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[14] || 'photo015.jpg'}</strong><br>
+                <img src="images/photo015.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54582231164303, lng: 139.56144075253874 },
+            map,
+            title: "photo016.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[15] || 'photo016.jpg'}</strong><br>
+                <img src="images/photo016.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54587231164302, lng: 139.56144075253874 },
+            map,
+            title: "photo017.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[16] || 'photo017.jpg'}</strong><br>
+                <img src="images/photo017.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545922311643025, lng: 139.56144075253874 },
+            map,
+            title: "photo018.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[17] || 'photo018.jpg'}</strong><br>
+                <img src="images/photo018.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54597231164303, lng: 139.56144075253874 },
+            map,
+            title: "photo019.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[18] || 'photo019.jpg'}</strong><br>
+                <img src="images/photo019.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545522311643026, lng: 139.56149075253876 },
+            map,
+            title: "photo020.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[19] || 'photo020.jpg'}</strong><br>
+                <img src="images/photo020.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54557231164303, lng: 139.56149075253876 },
+            map,
+            title: "photo021.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[20] || 'photo021.jpg'}</strong><br>
+                <img src="images/photo021.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54562231164303, lng: 139.56149075253876 },
+            map,
+            title: "photo022.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[21] || 'photo022.jpg'}</strong><br>
+                <img src="images/photo022.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545672311643024, lng: 139.56149075253876 },
+            map,
+            title: "photo023.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[22] || 'photo023.jpg'}</strong><br>
+                <img src="images/photo023.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545722311643026, lng: 139.56149075253876 },
+            map,
+            title: "photo024.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[23] || 'photo024.jpg'}</strong><br>
+                <img src="images/photo024.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54577231164303, lng: 139.56149075253876 },
+            map,
+            title: "photo025.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[24] || 'photo025.jpg'}</strong><br>
+                <img src="images/photo025.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54582231164303, lng: 139.56149075253876 },
+            map,
+            title: "photo026.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[25] || 'photo026.jpg'}</strong><br>
+                <img src="images/photo026.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54587231164302, lng: 139.56149075253876 },
+            map,
+            title: "photo027.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[26] || 'photo027.jpg'}</strong><br>
+                <img src="images/photo027.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545922311643025, lng: 139.56149075253876 },
+            map,
+            title: "photo028.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[27] || 'photo028.jpg'}</strong><br>
+                <img src="images/photo028.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54597231164303, lng: 139.56149075253876 },
+            map,
+            title: "photo029.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[28] || 'photo029.jpg'}</strong><br>
+                <img src="images/photo029.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545522311643026, lng: 139.56154075253875 },
+            map,
+            title: "photo030.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[29] || 'photo030.jpg'}</strong><br>
+                <img src="images/photo030.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54557231164303, lng: 139.56154075253875 },
+            map,
+            title: "photo031.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[30] || 'photo031.jpg'}</strong><br>
+                <img src="images/photo031.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54562231164303, lng: 139.56154075253875 },
+            map,
+            title: "photo032.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[31] || 'photo032.jpg'}</strong><br>
+                <img src="images/photo032.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545672311643024, lng: 139.56154075253875 },
+            map,
+            title: "photo033.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[32] || 'photo033.jpg'}</strong><br>
+                <img src="images/photo033.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545722311643026, lng: 139.56154075253875 },
+            map,
+            title: "photo034.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[33] || 'photo034.jpg'}</strong><br>
+                <img src="images/photo034.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54577231164303, lng: 139.56154075253875 },
+            map,
+            title: "photo035.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[34] || 'photo035.jpg'}</strong><br>
+                <img src="images/photo035.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54582231164303, lng: 139.56154075253875 },
+            map,
+            title: "photo036.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[35] || 'photo036.jpg'}</strong><br>
+                <img src="images/photo036.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54587231164302, lng: 139.56154075253875 },
+            map,
+            title: "photo037.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[36] || 'photo037.jpg'}</strong><br>
+                <img src="images/photo037.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545922311643025, lng: 139.56154075253875 },
+            map,
+            title: "photo038.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[37] || 'photo038.jpg'}</strong><br>
+                <img src="images/photo038.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54597231164303, lng: 139.56154075253875 },
+            map,
+            title: "photo039.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[38] || 'photo039.jpg'}</strong><br>
+                <img src="images/photo039.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545522311643026, lng: 139.56159075253876 },
+            map,
+            title: "photo040.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[39] || 'photo040.jpg'}</strong><br>
+                <img src="images/photo040.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54557231164303, lng: 139.56159075253876 },
+            map,
+            title: "photo041.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[40] || 'photo041.jpg'}</strong><br>
+                <img src="images/photo041.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54562231164303, lng: 139.56159075253876 },
+            map,
+            title: "photo042.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[41] || 'photo042.jpg'}</strong><br>
+                <img src="images/photo042.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545672311643024, lng: 139.56159075253876 },
+            map,
+            title: "photo043.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[42] || 'photo043.jpg'}</strong><br>
+                <img src="images/photo043.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545722311643026, lng: 139.56159075253876 },
+            map,
+            title: "photo044.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[43] || 'photo044.jpg'}</strong><br>
+                <img src="images/photo044.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54577231164303, lng: 139.56159075253876 },
+            map,
+            title: "photo045.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[44] || 'photo045.jpg'}</strong><br>
+                <img src="images/photo045.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54582231164303, lng: 139.56159075253876 },
+            map,
+            title: "photo046.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[45] || 'photo046.jpg'}</strong><br>
+                <img src="images/photo046.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54587231164302, lng: 139.56159075253876 },
+            map,
+            title: "photo047.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[46] || 'photo047.jpg'}</strong><br>
+                <img src="images/photo047.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545922311643025, lng: 139.56159075253876 },
+            map,
+            title: "photo048.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[47] || 'photo048.jpg'}</strong><br>
+                <img src="images/photo048.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54597231164303, lng: 139.56159075253876 },
+            map,
+            title: "photo049.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[48] || 'photo049.jpg'}</strong><br>
+                <img src="images/photo049.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545522311643026, lng: 139.56164075253875 },
+            map,
+            title: "photo050.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[49] || 'photo050.jpg'}</strong><br>
+                <img src="images/photo050.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54557231164303, lng: 139.56164075253875 },
+            map,
+            title: "photo051.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[50] || 'photo051.jpg'}</strong><br>
+                <img src="images/photo051.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54562231164303, lng: 139.56164075253875 },
+            map,
+            title: "photo052.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[51] || 'photo052.jpg'}</strong><br>
+                <img src="images/photo052.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545672311643024, lng: 139.56164075253875 },
+            map,
+            title: "photo053.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[52] || 'photo053.jpg'}</strong><br>
+                <img src="images/photo053.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545722311643026, lng: 139.56164075253875 },
+            map,
+            title: "photo054.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[53] || 'photo054.jpg'}</strong><br>
+                <img src="images/photo054.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54577231164303, lng: 139.56164075253875 },
+            map,
+            title: "photo055.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[54] || 'photo055.jpg'}</strong><br>
+                <img src="images/photo055.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54582231164303, lng: 139.56164075253875 },
+            map,
+            title: "photo056.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[55] || 'photo056.jpg'}</strong><br>
+                <img src="images/photo056.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54587231164302, lng: 139.56164075253875 },
+            map,
+            title: "photo057.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[56] || 'photo057.jpg'}</strong><br>
+                <img src="images/photo057.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545922311643025, lng: 139.56164075253875 },
+            map,
+            title: "photo058.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[57] || 'photo058.jpg'}</strong><br>
+                <img src="images/photo058.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54597231164303, lng: 139.56164075253875 },
+            map,
+            title: "photo059.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[58] || 'photo059.jpg'}</strong><br>
+                <img src="images/photo059.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545522311643026, lng: 139.56169075253877 },
+            map,
+            title: "photo060.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[59] || 'photo060.jpg'}</strong><br>
+                <img src="images/photo060.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54557231164303, lng: 139.56169075253877 },
+            map,
+            title: "photo061.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[60] || 'photo061.jpg'}</strong><br>
+                <img src="images/photo061.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54562231164303, lng: 139.56169075253877 },
+            map,
+            title: "photo062.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[61] || 'photo062.jpg'}</strong><br>
+                <img src="images/photo062.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545672311643024, lng: 139.56169075253877 },
+            map,
+            title: "photo063.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[62] || 'photo063.jpg'}</strong><br>
+                <img src="images/photo063.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545722311643026, lng: 139.56169075253877 },
+            map,
+            title: "photo064.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[63] || 'photo064.jpg'}</strong><br>
+                <img src="images/photo064.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54577231164303, lng: 139.56169075253877 },
+            map,
+            title: "photo065.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[64] || 'photo065.jpg'}</strong><br>
+                <img src="images/photo065.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54582231164303, lng: 139.56169075253877 },
+            map,
+            title: "photo066.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[65] || 'photo066.jpg'}</strong><br>
+                <img src="images/photo066.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54587231164302, lng: 139.56169075253877 },
+            map,
+            title: "photo067.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[66] || 'photo067.jpg'}</strong><br>
+                <img src="images/photo067.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545922311643025, lng: 139.56169075253877 },
+            map,
+            title: "photo068.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[67] || 'photo068.jpg'}</strong><br>
+                <img src="images/photo068.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54597231164303, lng: 139.56169075253877 },
+            map,
+            title: "photo069.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[68] || 'photo069.jpg'}</strong><br>
+                <img src="images/photo069.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545522311643026, lng: 139.56174075253875 },
+            map,
+            title: "photo070.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[69] || 'photo070.jpg'}</strong><br>
+                <img src="images/photo070.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54557231164303, lng: 139.56174075253875 },
+            map,
+            title: "photo071.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[70] || 'photo071.jpg'}</strong><br>
+                <img src="images/photo071.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54562231164303, lng: 139.56174075253875 },
+            map,
+            title: "photo072.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[71] || 'photo072.jpg'}</strong><br>
+                <img src="images/photo072.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545672311643024, lng: 139.56174075253875 },
+            map,
+            title: "photo073.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[72] || 'photo073.jpg'}</strong><br>
+                <img src="images/photo073.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545722311643026, lng: 139.56174075253875 },
+            map,
+            title: "photo074.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[73] || 'photo074.jpg'}</strong><br>
+                <img src="images/photo074.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54577231164303, lng: 139.56174075253875 },
+            map,
+            title: "photo075.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[74] || 'photo075.jpg'}</strong><br>
+                <img src="images/photo075.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54582231164303, lng: 139.56174075253875 },
+            map,
+            title: "photo076.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[75] || 'photo076.jpg'}</strong><br>
+                <img src="images/photo076.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54587231164302, lng: 139.56174075253875 },
+            map,
+            title: "photo077.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[76] || 'photo077.jpg'}</strong><br>
+                <img src="images/photo077.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545922311643025, lng: 139.56174075253875 },
+            map,
+            title: "photo078.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[77] || 'photo078.jpg'}</strong><br>
+                <img src="images/photo078.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54597231164303, lng: 139.56174075253875 },
+            map,
+            title: "photo079.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[78] || 'photo079.jpg'}</strong><br>
+                <img src="images/photo079.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545522311643026, lng: 139.56179075253877 },
+            map,
+            title: "photo080.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[79] || 'photo080.jpg'}</strong><br>
+                <img src="images/photo080.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54557231164303, lng: 139.56179075253877 },
+            map,
+            title: "photo081.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[80] || 'photo081.jpg'}</strong><br>
+                <img src="images/photo081.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54562231164303, lng: 139.56179075253877 },
+            map,
+            title: "photo082.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[81] || 'photo082.jpg'}</strong><br>
+                <img src="images/photo082.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545672311643024, lng: 139.56179075253877 },
+            map,
+            title: "photo083.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[82] || 'photo083.jpg'}</strong><br>
+                <img src="images/photo083.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545722311643026, lng: 139.56179075253877 },
+            map,
+            title: "photo084.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[83] || 'photo084.jpg'}</strong><br>
+                <img src="images/photo084.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54577231164303, lng: 139.56179075253877 },
+            map,
+            title: "photo085.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[84] || 'photo085.jpg'}</strong><br>
+                <img src="images/photo085.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54582231164303, lng: 139.56179075253877 },
+            map,
+            title: "photo086.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[85] || 'photo086.jpg'}</strong><br>
+                <img src="images/photo086.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54587231164302, lng: 139.56179075253877 },
+            map,
+            title: "photo087.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[86] || 'photo087.jpg'}</strong><br>
+                <img src="images/photo087.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.545922311643025, lng: 139.56179075253877 },
+            map,
+            title: "photo088.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[87] || 'photo088.jpg'}</strong><br>
+                <img src="images/photo088.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
+        });
+        new google.maps.Marker({
+            position: { lat: 35.54597231164303, lng: 139.56179075253877 },
+            map,
+            title: "photo089.jpg"
+        }).addListener("click", () => {
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${captions[88] || 'photo089.jpg'}</strong><br>
+                <img src="images/photo089.jpg" width="200">
+              </div>
+            `);
+            infoWindow.open(map, this);
         });
       }
     </script>
