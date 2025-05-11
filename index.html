@@ -1,427 +1,512 @@
 <!DOCTYPE html>
-<html lang='ja'>
+<html lang="ja">
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>けやきが丘 ロケ地写真ギャラリー</title>
-  <style>
-    body { font-family: sans-serif; padding: 20px; background: #f5f5f5; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
-    .gallery-item { background: white; padding: 6px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .gallery-item img { max-width: 100%; height: auto; display: block; margin: 0 auto; cursor: pointer; border-radius: 3px; }
-    .caption { margin-top: 5px; font-size: 0.9em; color: #333; }
-    .lightbox { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; flex-direction: column; z-index: 9999; }
-    .lightbox img { max-width: 90vw; max-height: 80vh; }
-    .nav-button { position: absolute; top: 50%; transform: translateY(-50%); font-size: 3em; color: white; cursor: pointer; user-select: none; }
-    .nav-left { left: 30px; }
-    .nav-right { right: 30px; }
-    .close-button { position: absolute; top: 20px; right: 30px; font-size: 2em; color: white; cursor: pointer; }
-    @media (max-width: 600px) { .nav-button { font-size: 2em; } }
-  </style>
+    <meta charset="UTF-8">
+    <title>けやきが丘 ロケ地写真ギャラリー</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 1em;
+        }
+        h1 {
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1em;
+        }
+        .gallery-item {
+            background: white;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .caption {
+            margin-top: 0.5em;
+            font-size: 0.9em;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 1em 2em;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+        .download-button:hover {
+            background-color: #45a049;
+        }
+        .download-wrapper {
+            text-align: center;
+            margin: 40px 0;
+        }
+    </style>
 </head>
 <body>
-  <h1>けやきが丘 ロケ地写真ギャラリー</h1>
-  <div class='gallery'>
-    <div class='gallery-item'>
-      <img src='images/photo001.jpg' alt='ロケ写真' onclick='openLightbox(0)'>
-      <div class='caption' id='caption-0'></div>
+    <h1>けやきが丘 ロケ地写真ギャラリー</h1>
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="images/photo001.jpg" alt="ロケ写真">
+            <div class="caption">001：駐車場から見上げた、12号棟へと続く階段です。けやきが丘住宅はいわゆる平坦な団地ではなく、丘陵地に建つため階段や高低差が多く、起伏に富んだ地形が特徴です。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo002.jpg" alt="ロケ写真">
+            <div class="caption">002：駐車場から見上げた、12号棟へと続く階段です。（別アングル）</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo003.jpg" alt="ロケ写真">
+            <div class="caption">003：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo004.jpg" alt="ロケ写真">
+            <div class="caption">004：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo005.jpg" alt="ロケ写真">
+            <div class="caption">005：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo006.jpg" alt="ロケ写真">
+            <div class="caption">006：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo007.jpg" alt="ロケ写真">
+            <div class="caption">007：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo008.jpg" alt="ロケ写真">
+            <div class="caption">008：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo009.jpg" alt="ロケ写真">
+            <div class="caption">009：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo010.jpg" alt="ロケ写真">
+            <div class="caption">010：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo011.jpg" alt="ロケ写真">
+            <div class="caption">011：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo012.jpg" alt="ロケ写真">
+            <div class="caption">012：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo013.jpg" alt="ロケ写真">
+            <div class="caption">013：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo014.jpg" alt="ロケ写真">
+            <div class="caption">014：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo015.jpg" alt="ロケ写真">
+            <div class="caption">015：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo016.jpg" alt="ロケ写真">
+            <div class="caption">016：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo017.jpg" alt="ロケ写真">
+            <div class="caption">017：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo018.jpg" alt="ロケ写真">
+            <div class="caption">018：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo019.jpg" alt="ロケ写真">
+            <div class="caption">019：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo020.jpg" alt="ロケ写真">
+            <div class="caption">020：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo021.jpg" alt="ロケ写真">
+            <div class="caption">021：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo022.jpg" alt="ロケ写真">
+            <div class="caption">022：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo023.jpg" alt="ロケ写真">
+            <div class="caption">023：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo024.jpg" alt="ロケ写真">
+            <div class="caption">024：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo025.jpg" alt="ロケ写真">
+            <div class="caption">025：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo026.jpg" alt="ロケ写真">
+            <div class="caption">026：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo027.jpg" alt="ロケ写真">
+            <div class="caption">027：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo028.jpg" alt="ロケ写真">
+            <div class="caption">028：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo029.jpg" alt="ロケ写真">
+            <div class="caption">029：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo030.jpg" alt="ロケ写真">
+            <div class="caption">030：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo031.jpg" alt="ロケ写真">
+            <div class="caption">031：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo032.jpg" alt="ロケ写真">
+            <div class="caption">032：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo033.jpg" alt="ロケ写真">
+            <div class="caption">033：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo034.jpg" alt="ロケ写真">
+            <div class="caption">034：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo035.jpg" alt="ロケ写真">
+            <div class="caption">035：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo036.jpg" alt="ロケ写真">
+            <div class="caption">036：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo037.jpg" alt="ロケ写真">
+            <div class="caption">037：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo038.jpg" alt="ロケ写真">
+            <div class="caption">038：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo039.jpg" alt="ロケ写真">
+            <div class="caption">039：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo040.jpg" alt="ロケ写真">
+            <div class="caption">040：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo041.jpg" alt="ロケ写真">
+            <div class="caption">041：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo042.jpg" alt="ロケ写真">
+            <div class="caption">042：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo043.jpg" alt="ロケ写真">
+            <div class="caption">043：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo044.jpg" alt="ロケ写真">
+            <div class="caption">044：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo045.jpg" alt="ロケ写真">
+            <div class="caption">045：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo046.jpg" alt="ロケ写真">
+            <div class="caption">046：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo047.jpg" alt="ロケ写真">
+            <div class="caption">047：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo048.jpg" alt="ロケ写真">
+            <div class="caption">048：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo049.jpg" alt="ロケ写真">
+            <div class="caption">049：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo050.jpg" alt="ロケ写真">
+            <div class="caption">050：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo051.jpg" alt="ロケ写真">
+            <div class="caption">051：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo052.jpg" alt="ロケ写真">
+            <div class="caption">052：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo053.jpg" alt="ロケ写真">
+            <div class="caption">053：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo054.jpg" alt="ロケ写真">
+            <div class="caption">054：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo055.jpg" alt="ロケ写真">
+            <div class="caption">055：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo056.jpg" alt="ロケ写真">
+            <div class="caption">056：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo057.jpg" alt="ロケ写真">
+            <div class="caption">057：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo058.jpg" alt="ロケ写真">
+            <div class="caption">058：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo059.jpg" alt="ロケ写真">
+            <div class="caption">059：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo060.jpg" alt="ロケ写真">
+            <div class="caption">060：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo061.jpg" alt="ロケ写真">
+            <div class="caption">061：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo062.jpg" alt="ロケ写真">
+            <div class="caption">062：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo063.jpg" alt="ロケ写真">
+            <div class="caption">063：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo064.jpg" alt="ロケ写真">
+            <div class="caption">064：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo065.jpg" alt="ロケ写真">
+            <div class="caption">065：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo066.jpg" alt="ロケ写真">
+            <div class="caption">066：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo067.jpg" alt="ロケ写真">
+            <div class="caption">067：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo068.jpg" alt="ロケ写真">
+            <div class="caption">068：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo069.jpg" alt="ロケ写真">
+            <div class="caption">069：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo070.jpg" alt="ロケ写真">
+            <div class="caption">070：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo071.jpg" alt="ロケ写真">
+            <div class="caption">071：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo072.jpg" alt="ロケ写真">
+            <div class="caption">072：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo073.jpg" alt="ロケ写真">
+            <div class="caption">073：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo074.jpg" alt="ロケ写真">
+            <div class="caption">074：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo075.jpg" alt="ロケ写真">
+            <div class="caption">075：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo076.jpg" alt="ロケ写真">
+            <div class="caption">076：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo077.jpg" alt="ロケ写真">
+            <div class="caption">077：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo078.jpg" alt="ロケ写真">
+            <div class="caption">078：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo079.jpg" alt="ロケ写真">
+            <div class="caption">079：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo080.jpg" alt="ロケ写真">
+            <div class="caption">080：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo081.jpg" alt="ロケ写真">
+            <div class="caption">081：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo082.jpg" alt="ロケ写真">
+            <div class="caption">082：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo083.jpg" alt="ロケ写真">
+            <div class="caption">083：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo084.jpg" alt="ロケ写真">
+            <div class="caption">084：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo085.jpg" alt="ロケ写真">
+            <div class="caption">085：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo086.jpg" alt="ロケ写真">
+            <div class="caption">086：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo087.jpg" alt="ロケ写真">
+            <div class="caption">087：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo088.jpg" alt="ロケ写真">
+            <div class="caption">088：仮コメントです。</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/photo089.jpg" alt="ロケ写真">
+            <div class="caption">089：仮コメントです。</div>
+        </div>
+
+    </div>
+    <div class="download-wrapper">
+        <a href="images/photos.zip" download class="download-button">
+            📦 画像をまとめて一括ダウンロード
+        </a>
     </div>
-    <div class='gallery-item'>
-      <img src='images/photo002.jpg' alt='ロケ写真' onclick='openLightbox(1)'>
-      <div class='caption' id='caption-1'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo003.jpg' alt='ロケ写真' onclick='openLightbox(2)'>
-      <div class='caption' id='caption-2'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo004.jpg' alt='ロケ写真' onclick='openLightbox(3)'>
-      <div class='caption' id='caption-3'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo005.jpg' alt='ロケ写真' onclick='openLightbox(4)'>
-      <div class='caption' id='caption-4'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo006.jpg' alt='ロケ写真' onclick='openLightbox(5)'>
-      <div class='caption' id='caption-5'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo007.jpg' alt='ロケ写真' onclick='openLightbox(6)'>
-      <div class='caption' id='caption-6'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo008.jpg' alt='ロケ写真' onclick='openLightbox(7)'>
-      <div class='caption' id='caption-7'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo009.jpg' alt='ロケ写真' onclick='openLightbox(8)'>
-      <div class='caption' id='caption-8'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo010.jpg' alt='ロケ写真' onclick='openLightbox(9)'>
-      <div class='caption' id='caption-9'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo011.jpg' alt='ロケ写真' onclick='openLightbox(10)'>
-      <div class='caption' id='caption-10'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo012.jpg' alt='ロケ写真' onclick='openLightbox(11)'>
-      <div class='caption' id='caption-11'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo013.jpg' alt='ロケ写真' onclick='openLightbox(12)'>
-      <div class='caption' id='caption-12'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo014.jpg' alt='ロケ写真' onclick='openLightbox(13)'>
-      <div class='caption' id='caption-13'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo015.jpg' alt='ロケ写真' onclick='openLightbox(14)'>
-      <div class='caption' id='caption-14'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo016.jpg' alt='ロケ写真' onclick='openLightbox(15)'>
-      <div class='caption' id='caption-15'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo017.jpg' alt='ロケ写真' onclick='openLightbox(16)'>
-      <div class='caption' id='caption-16'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo018.jpg' alt='ロケ写真' onclick='openLightbox(17)'>
-      <div class='caption' id='caption-17'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo019.jpg' alt='ロケ写真' onclick='openLightbox(18)'>
-      <div class='caption' id='caption-18'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo020.jpg' alt='ロケ写真' onclick='openLightbox(19)'>
-      <div class='caption' id='caption-19'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo021.jpg' alt='ロケ写真' onclick='openLightbox(20)'>
-      <div class='caption' id='caption-20'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo022.jpg' alt='ロケ写真' onclick='openLightbox(21)'>
-      <div class='caption' id='caption-21'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo023.jpg' alt='ロケ写真' onclick='openLightbox(22)'>
-      <div class='caption' id='caption-22'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo024.jpg' alt='ロケ写真' onclick='openLightbox(23)'>
-      <div class='caption' id='caption-23'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo025.jpg' alt='ロケ写真' onclick='openLightbox(24)'>
-      <div class='caption' id='caption-24'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo026.jpg' alt='ロケ写真' onclick='openLightbox(25)'>
-      <div class='caption' id='caption-25'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo027.jpg' alt='ロケ写真' onclick='openLightbox(26)'>
-      <div class='caption' id='caption-26'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo028.jpg' alt='ロケ写真' onclick='openLightbox(27)'>
-      <div class='caption' id='caption-27'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo029.jpg' alt='ロケ写真' onclick='openLightbox(28)'>
-      <div class='caption' id='caption-28'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo030.jpg' alt='ロケ写真' onclick='openLightbox(29)'>
-      <div class='caption' id='caption-29'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo031.jpg' alt='ロケ写真' onclick='openLightbox(30)'>
-      <div class='caption' id='caption-30'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo032.jpg' alt='ロケ写真' onclick='openLightbox(31)'>
-      <div class='caption' id='caption-31'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo033.jpg' alt='ロケ写真' onclick='openLightbox(32)'>
-      <div class='caption' id='caption-32'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo034.jpg' alt='ロケ写真' onclick='openLightbox(33)'>
-      <div class='caption' id='caption-33'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo035.jpg' alt='ロケ写真' onclick='openLightbox(34)'>
-      <div class='caption' id='caption-34'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo036.jpg' alt='ロケ写真' onclick='openLightbox(35)'>
-      <div class='caption' id='caption-35'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo037.jpg' alt='ロケ写真' onclick='openLightbox(36)'>
-      <div class='caption' id='caption-36'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo038.jpg' alt='ロケ写真' onclick='openLightbox(37)'>
-      <div class='caption' id='caption-37'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo039.jpg' alt='ロケ写真' onclick='openLightbox(38)'>
-      <div class='caption' id='caption-38'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo040.jpg' alt='ロケ写真' onclick='openLightbox(39)'>
-      <div class='caption' id='caption-39'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo041.jpg' alt='ロケ写真' onclick='openLightbox(40)'>
-      <div class='caption' id='caption-40'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo042.jpg' alt='ロケ写真' onclick='openLightbox(41)'>
-      <div class='caption' id='caption-41'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo043.jpg' alt='ロケ写真' onclick='openLightbox(42)'>
-      <div class='caption' id='caption-42'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo044.jpg' alt='ロケ写真' onclick='openLightbox(43)'>
-      <div class='caption' id='caption-43'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo045.jpg' alt='ロケ写真' onclick='openLightbox(44)'>
-      <div class='caption' id='caption-44'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo046.jpg' alt='ロケ写真' onclick='openLightbox(45)'>
-      <div class='caption' id='caption-45'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo047.jpg' alt='ロケ写真' onclick='openLightbox(46)'>
-      <div class='caption' id='caption-46'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo048.jpg' alt='ロケ写真' onclick='openLightbox(47)'>
-      <div class='caption' id='caption-47'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo049.jpg' alt='ロケ写真' onclick='openLightbox(48)'>
-      <div class='caption' id='caption-48'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo050.jpg' alt='ロケ写真' onclick='openLightbox(49)'>
-      <div class='caption' id='caption-49'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo051.jpg' alt='ロケ写真' onclick='openLightbox(50)'>
-      <div class='caption' id='caption-50'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo052.jpg' alt='ロケ写真' onclick='openLightbox(51)'>
-      <div class='caption' id='caption-51'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo053.jpg' alt='ロケ写真' onclick='openLightbox(52)'>
-      <div class='caption' id='caption-52'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo054.jpg' alt='ロケ写真' onclick='openLightbox(53)'>
-      <div class='caption' id='caption-53'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo055.jpg' alt='ロケ写真' onclick='openLightbox(54)'>
-      <div class='caption' id='caption-54'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo056.jpg' alt='ロケ写真' onclick='openLightbox(55)'>
-      <div class='caption' id='caption-55'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo057.jpg' alt='ロケ写真' onclick='openLightbox(56)'>
-      <div class='caption' id='caption-56'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo058.jpg' alt='ロケ写真' onclick='openLightbox(57)'>
-      <div class='caption' id='caption-57'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo059.jpg' alt='ロケ写真' onclick='openLightbox(58)'>
-      <div class='caption' id='caption-58'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo060.jpg' alt='ロケ写真' onclick='openLightbox(59)'>
-      <div class='caption' id='caption-59'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo061.jpg' alt='ロケ写真' onclick='openLightbox(60)'>
-      <div class='caption' id='caption-60'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo062.jpg' alt='ロケ写真' onclick='openLightbox(61)'>
-      <div class='caption' id='caption-61'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo063.jpg' alt='ロケ写真' onclick='openLightbox(62)'>
-      <div class='caption' id='caption-62'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo064.jpg' alt='ロケ写真' onclick='openLightbox(63)'>
-      <div class='caption' id='caption-63'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo065.jpg' alt='ロケ写真' onclick='openLightbox(64)'>
-      <div class='caption' id='caption-64'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo066.jpg' alt='ロケ写真' onclick='openLightbox(65)'>
-      <div class='caption' id='caption-65'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo067.jpg' alt='ロケ写真' onclick='openLightbox(66)'>
-      <div class='caption' id='caption-66'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo068.jpg' alt='ロケ写真' onclick='openLightbox(67)'>
-      <div class='caption' id='caption-67'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo069.jpg' alt='ロケ写真' onclick='openLightbox(68)'>
-      <div class='caption' id='caption-68'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo070.jpg' alt='ロケ写真' onclick='openLightbox(69)'>
-      <div class='caption' id='caption-69'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo071.jpg' alt='ロケ写真' onclick='openLightbox(70)'>
-      <div class='caption' id='caption-70'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo072.jpg' alt='ロケ写真' onclick='openLightbox(71)'>
-      <div class='caption' id='caption-71'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo073.jpg' alt='ロケ写真' onclick='openLightbox(72)'>
-      <div class='caption' id='caption-72'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo074.jpg' alt='ロケ写真' onclick='openLightbox(73)'>
-      <div class='caption' id='caption-73'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo075.jpg' alt='ロケ写真' onclick='openLightbox(74)'>
-      <div class='caption' id='caption-74'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo076.jpg' alt='ロケ写真' onclick='openLightbox(75)'>
-      <div class='caption' id='caption-75'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo077.jpg' alt='ロケ写真' onclick='openLightbox(76)'>
-      <div class='caption' id='caption-76'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo078.jpg' alt='ロケ写真' onclick='openLightbox(77)'>
-      <div class='caption' id='caption-77'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo079.jpg' alt='ロケ写真' onclick='openLightbox(78)'>
-      <div class='caption' id='caption-78'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo080.jpg' alt='ロケ写真' onclick='openLightbox(79)'>
-      <div class='caption' id='caption-79'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo081.jpg' alt='ロケ写真' onclick='openLightbox(80)'>
-      <div class='caption' id='caption-80'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo082.jpg' alt='ロケ写真' onclick='openLightbox(81)'>
-      <div class='caption' id='caption-81'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo083.jpg' alt='ロケ写真' onclick='openLightbox(82)'>
-      <div class='caption' id='caption-82'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo084.jpg' alt='ロケ写真' onclick='openLightbox(83)'>
-      <div class='caption' id='caption-83'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo085.jpg' alt='ロケ写真' onclick='openLightbox(84)'>
-      <div class='caption' id='caption-84'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo086.jpg' alt='ロケ写真' onclick='openLightbox(85)'>
-      <div class='caption' id='caption-85'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo087.jpg' alt='ロケ写真' onclick='openLightbox(86)'>
-      <div class='caption' id='caption-86'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo088.jpg' alt='ロケ写真' onclick='openLightbox(87)'>
-      <div class='caption' id='caption-87'></div>
-    </div>
-    <div class='gallery-item'>
-      <img src='images/photo089.jpg' alt='ロケ写真' onclick='openLightbox(88)'>
-      <div class='caption' id='caption-88'></div>
-    </div>
-  </div>
-  <div class='lightbox' id='lightbox'>
-    <div class='close-button' onclick='closeLightbox()'>×</div>
-    <div class='nav-button nav-left' onclick='changeSlide(-1)'>&lt;</div>
-    <img id='lightbox-img' src=''>
-    <div class='nav-button nav-right' onclick='changeSlide(1)'>&gt;</div>
-  </div>
-  <script>
-    const images = ['images/photo001.jpg', 'images/photo002.jpg', 'images/photo003.jpg', 'images/photo004.jpg', 'images/photo005.jpg', 'images/photo006.jpg', 'images/photo007.jpg', 'images/photo008.jpg', 'images/photo009.jpg', 'images/photo010.jpg', 'images/photo011.jpg', 'images/photo012.jpg', 'images/photo013.jpg', 'images/photo014.jpg', 'images/photo015.jpg', 'images/photo016.jpg', 'images/photo017.jpg', 'images/photo018.jpg', 'images/photo019.jpg', 'images/photo020.jpg', 'images/photo021.jpg', 'images/photo022.jpg', 'images/photo023.jpg', 'images/photo024.jpg', 'images/photo025.jpg', 'images/photo026.jpg', 'images/photo027.jpg', 'images/photo028.jpg', 'images/photo029.jpg', 'images/photo030.jpg', 'images/photo031.jpg', 'images/photo032.jpg', 'images/photo033.jpg', 'images/photo034.jpg', 'images/photo035.jpg', 'images/photo036.jpg', 'images/photo037.jpg', 'images/photo038.jpg', 'images/photo039.jpg', 'images/photo040.jpg', 'images/photo041.jpg', 'images/photo042.jpg', 'images/photo043.jpg', 'images/photo044.jpg', 'images/photo045.jpg', 'images/photo046.jpg', 'images/photo047.jpg', 'images/photo048.jpg', 'images/photo049.jpg', 'images/photo050.jpg', 'images/photo051.jpg', 'images/photo052.jpg', 'images/photo053.jpg', 'images/photo054.jpg', 'images/photo055.jpg', 'images/photo056.jpg', 'images/photo057.jpg', 'images/photo058.jpg', 'images/photo059.jpg', 'images/photo060.jpg', 'images/photo061.jpg', 'images/photo062.jpg', 'images/photo063.jpg', 'images/photo064.jpg', 'images/photo065.jpg', 'images/photo066.jpg', 'images/photo067.jpg', 'images/photo068.jpg', 'images/photo069.jpg', 'images/photo070.jpg', 'images/photo071.jpg', 'images/photo072.jpg', 'images/photo073.jpg', 'images/photo074.jpg', 'images/photo075.jpg', 'images/photo076.jpg', 'images/photo077.jpg', 'images/photo078.jpg', 'images/photo079.jpg', 'images/photo080.jpg', 'images/photo081.jpg', 'images/photo082.jpg', 'images/photo083.jpg', 'images/photo084.jpg', 'images/photo085.jpg', 'images/photo086.jpg', 'images/photo087.jpg', 'images/photo088.jpg', 'images/photo089.jpg'];
-    let captions = [];
-    let currentIndex = 0;
-    function openLightbox(index) {
-      currentIndex = index;
-      document.getElementById('lightbox-img').src = images[currentIndex];
-      document.getElementById('lightbox').style.display = 'flex';
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-    }
-    function changeSlide(step) {
-      currentIndex = (currentIndex + step + images.length) % images.length;
-      document.getElementById('lightbox-img').src = images[currentIndex];
-    }
-    fetch('captions.json')
-      .then(response => response.json())
-      .then(data => {
-        captions = data;
-        for (let i = 0; i < captions.length; i++) {
-          const el = document.getElementById('caption-' + i);
-          if (el) el.textContent = captions[i];
-        }
-      });
-    let touchStartX = null;
-    document.getElementById('lightbox').addEventListener('touchstart', function(e) {
-      touchStartX = e.changedTouches[0].screenX;
-    });
-    document.getElementById('lightbox').addEventListener('touchend', function(e) {
-      if (touchStartX === null) return;
-      let touchEndX = e.changedTouches[0].screenX;
-      let dx = touchEndX - touchStartX;
-      if (dx > 50) changeSlide(-1);
-      else if (dx < -50) changeSlide(1);
-      touchStartX = null;
-    });
-  </script>
 </body>
 </html>
