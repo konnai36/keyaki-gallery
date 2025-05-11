@@ -3,59 +3,66 @@
 <html>
   <head>
     <title>けやきが丘 ロケ地マップ</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      #map {
-        height: 100vh;
+      html, body, #map {{
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }}
+      .info-content {{
+        max-width: 220px;
+        font-size: 14px;
+      }}
+      .info-content img {{
         width: 100%;
-      }
+        margin-top: 0.5em;
+        border-radius: 4px;
+      }}
     </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC43l4vgqwlHsWX7XiWzzTkBnGLlLSf1fQ"></script>
-    <script>
-      function initMap() {
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 18,
-          center: { lat: 35.546002, lng: 139.56082497222224 },
-          mapTypeId: 'satellite'
-        });
-
-        const locations = [
-          {
-            position: { lat: 35.546002, lng: 139.56082497222224 },
-            title: "photo001.jpg",
-            image: "photo001.jpg"
-          },
-          {
-            position: { lat: 35.546002, lng: 139.56082497222224 },
-            title: "photo002.jpg",
-            image: "photo002.jpg"
-          },
-          {
-            position: { lat: 35.546002, lng: 139.56082497222224 },
-            title: "photo003.jpg",
-            image: "photo003.jpg"
-          },
-          
-        ];
-
-        const infowindow = new google.maps.InfoWindow();
-
-        locations.forEach(loc => {
-          const marker = new google.maps.Marker({
-            position: loc.position,
-            map,
-            title: loc.title
-          });
-
-          marker.addListener("click", () => {
-            infowindow.setContent("<b>" + loc.title + "</b><br><img src='images/" + loc.image + "' width='200'>");
-            infowindow.open(map, marker);
-          });
-        });
-      }
-    </script>
   </head>
-  <body onload="initMap()">
+  <body>
     <div id="map"></div>
+    <script>
+      async function initMap() {{
+        const center = {{ lat: 35.545522, lng: 139.561391 }};
+        const map = new google.maps.Map(document.getElementById("map"), {{
+          zoom: 17,
+          center,
+          mapTypeId: 'satellite'
+        }});
+        const infoWindow = new google.maps.InfoWindow();
+
+        let gpsData = [];
+        try {{
+          const res = await fetch("photo_gps_data.json");
+          gpsData = await res.json();
+        }} catch (e) {{
+          console.error("photo_gps_data.json 読み込み失敗:", e);
+        }}
+
+        gpsData.forEach((item) => {{
+          const marker = new google.maps.Marker({{
+            position: {{ lat: item.lat, lng: item.lng }},
+            map,
+            title: item.filename
+          }});
+
+          marker.addListener("click", () => {{
+            infoWindow.setContent(`
+              <div class="info-content">
+                <strong>${{item.filename}}</strong><br>
+                <img src="images/${{item.filename}}" alt="${{item.filename}}">
+              </div>
+            `);
+            infoWindow.open(map, marker);
+          }});
+        }});
+      }}
+    </script>
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC43l4vgqwlHsWX7XiWzzTkBnGLlLSf1fQ&callback=initMap">
+    </script>
   </body>
 </html>
