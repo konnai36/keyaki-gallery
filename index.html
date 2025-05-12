@@ -9,647 +9,664 @@
         body { font-family: sans-serif; background-color: #f7f7f7; margin: 0; padding: 1em; }
         h1 { text-align: center; }
         .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1em; }
-        .gallery-item { background: white; padding: 1em; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
-        .gallery-item img { max-width: 100%; height: auto; border-radius: 4px; cursor: pointer; }
-        .caption { margin-top: 0.5em; font-size: 0.9em; }
+        .gallery-item { position: relative; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .gallery-item img { width: 100%; height: auto; display: block; }
+        .caption-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); color: #fff; padding: 0.5em; font-size: 0.9em; display: none; }
+        @media (max-width: 600px) {
+            .gallery-item img { height: auto; width: 100%; }
+            .caption-overlay { font-size: 1em; }
+        }
     </style>
 </head>
 <body>
     <h1>けやきが丘 ロケ地写真ギャラリー</h1>
     <div class="gallery">
 
-        <div class="gallery-item">
-            <a href="images/photo001.jpg" class="glightbox" data-gallery="gallery1" data-title="001：仮コメントです。">
+        <div class="gallery-item" data-index="0">
+            <a href="images/photo001.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo001.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">001：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo002.jpg" class="glightbox" data-gallery="gallery1" data-title="002：仮コメントです。">
+        <div class="gallery-item" data-index="1">
+            <a href="images/photo002.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo002.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">002：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo003.jpg" class="glightbox" data-gallery="gallery1" data-title="003：仮コメントです。">
+        <div class="gallery-item" data-index="2">
+            <a href="images/photo003.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo003.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">003：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo004.jpg" class="glightbox" data-gallery="gallery1" data-title="004：仮コメントです。">
+        <div class="gallery-item" data-index="3">
+            <a href="images/photo004.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo004.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">004：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo005.jpg" class="glightbox" data-gallery="gallery1" data-title="005：仮コメントです。">
+        <div class="gallery-item" data-index="4">
+            <a href="images/photo005.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo005.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">005：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo006.jpg" class="glightbox" data-gallery="gallery1" data-title="006：仮コメントです。">
+        <div class="gallery-item" data-index="5">
+            <a href="images/photo006.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo006.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">006：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo007.jpg" class="glightbox" data-gallery="gallery1" data-title="007：仮コメントです。">
+        <div class="gallery-item" data-index="6">
+            <a href="images/photo007.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo007.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">007：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo008.jpg" class="glightbox" data-gallery="gallery1" data-title="008：仮コメントです。">
+        <div class="gallery-item" data-index="7">
+            <a href="images/photo008.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo008.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">008：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo009.jpg" class="glightbox" data-gallery="gallery1" data-title="009：仮コメントです。">
+        <div class="gallery-item" data-index="8">
+            <a href="images/photo009.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo009.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">009：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo010.jpg" class="glightbox" data-gallery="gallery1" data-title="010：仮コメントです。">
+        <div class="gallery-item" data-index="9">
+            <a href="images/photo010.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo010.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">010：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo011.jpg" class="glightbox" data-gallery="gallery1" data-title="011：仮コメントです。">
+        <div class="gallery-item" data-index="10">
+            <a href="images/photo011.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo011.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">011：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo012.jpg" class="glightbox" data-gallery="gallery1" data-title="012：仮コメントです。">
+        <div class="gallery-item" data-index="11">
+            <a href="images/photo012.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo012.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">012：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo013.jpg" class="glightbox" data-gallery="gallery1" data-title="013：仮コメントです。">
+        <div class="gallery-item" data-index="12">
+            <a href="images/photo013.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo013.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">013：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo014.jpg" class="glightbox" data-gallery="gallery1" data-title="014：仮コメントです。">
+        <div class="gallery-item" data-index="13">
+            <a href="images/photo014.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo014.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">014：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo015.jpg" class="glightbox" data-gallery="gallery1" data-title="015：仮コメントです。">
+        <div class="gallery-item" data-index="14">
+            <a href="images/photo015.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo015.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">015：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo016.jpg" class="glightbox" data-gallery="gallery1" data-title="016：仮コメントです。">
+        <div class="gallery-item" data-index="15">
+            <a href="images/photo016.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo016.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">016：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo017.jpg" class="glightbox" data-gallery="gallery1" data-title="017：仮コメントです。">
+        <div class="gallery-item" data-index="16">
+            <a href="images/photo017.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo017.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">017：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo018.jpg" class="glightbox" data-gallery="gallery1" data-title="018：仮コメントです。">
+        <div class="gallery-item" data-index="17">
+            <a href="images/photo018.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo018.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">018：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo019.jpg" class="glightbox" data-gallery="gallery1" data-title="019：仮コメントです。">
+        <div class="gallery-item" data-index="18">
+            <a href="images/photo019.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo019.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">019：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo020.jpg" class="glightbox" data-gallery="gallery1" data-title="020：仮コメントです。">
+        <div class="gallery-item" data-index="19">
+            <a href="images/photo020.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo020.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">020：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo021.jpg" class="glightbox" data-gallery="gallery1" data-title="021：仮コメントです。">
+        <div class="gallery-item" data-index="20">
+            <a href="images/photo021.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo021.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">021：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo022.jpg" class="glightbox" data-gallery="gallery1" data-title="022：仮コメントです。">
+        <div class="gallery-item" data-index="21">
+            <a href="images/photo022.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo022.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">022：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo023.jpg" class="glightbox" data-gallery="gallery1" data-title="023：仮コメントです。">
+        <div class="gallery-item" data-index="22">
+            <a href="images/photo023.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo023.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">023：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo024.jpg" class="glightbox" data-gallery="gallery1" data-title="024：仮コメントです。">
+        <div class="gallery-item" data-index="23">
+            <a href="images/photo024.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo024.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">024：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo025.jpg" class="glightbox" data-gallery="gallery1" data-title="025：仮コメントです。">
+        <div class="gallery-item" data-index="24">
+            <a href="images/photo025.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo025.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">025：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo026.jpg" class="glightbox" data-gallery="gallery1" data-title="026：仮コメントです。">
+        <div class="gallery-item" data-index="25">
+            <a href="images/photo026.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo026.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">026：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo027.jpg" class="glightbox" data-gallery="gallery1" data-title="027：仮コメントです。">
+        <div class="gallery-item" data-index="26">
+            <a href="images/photo027.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo027.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">027：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo028.jpg" class="glightbox" data-gallery="gallery1" data-title="028：仮コメントです。">
+        <div class="gallery-item" data-index="27">
+            <a href="images/photo028.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo028.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">028：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo029.jpg" class="glightbox" data-gallery="gallery1" data-title="029：仮コメントです。">
+        <div class="gallery-item" data-index="28">
+            <a href="images/photo029.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo029.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">029：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo030.jpg" class="glightbox" data-gallery="gallery1" data-title="030：仮コメントです。">
+        <div class="gallery-item" data-index="29">
+            <a href="images/photo030.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo030.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">030：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo031.jpg" class="glightbox" data-gallery="gallery1" data-title="031：仮コメントです。">
+        <div class="gallery-item" data-index="30">
+            <a href="images/photo031.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo031.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">031：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo032.jpg" class="glightbox" data-gallery="gallery1" data-title="032：仮コメントです。">
+        <div class="gallery-item" data-index="31">
+            <a href="images/photo032.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo032.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">032：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo033.jpg" class="glightbox" data-gallery="gallery1" data-title="033：仮コメントです。">
+        <div class="gallery-item" data-index="32">
+            <a href="images/photo033.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo033.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">033：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo034.jpg" class="glightbox" data-gallery="gallery1" data-title="034：仮コメントです。">
+        <div class="gallery-item" data-index="33">
+            <a href="images/photo034.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo034.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">034：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo035.jpg" class="glightbox" data-gallery="gallery1" data-title="035：仮コメントです。">
+        <div class="gallery-item" data-index="34">
+            <a href="images/photo035.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo035.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">035：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo036.jpg" class="glightbox" data-gallery="gallery1" data-title="036：仮コメントです。">
+        <div class="gallery-item" data-index="35">
+            <a href="images/photo036.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo036.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">036：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo037.jpg" class="glightbox" data-gallery="gallery1" data-title="037：仮コメントです。">
+        <div class="gallery-item" data-index="36">
+            <a href="images/photo037.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo037.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">037：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo038.jpg" class="glightbox" data-gallery="gallery1" data-title="038：仮コメントです。">
+        <div class="gallery-item" data-index="37">
+            <a href="images/photo038.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo038.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">038：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo039.jpg" class="glightbox" data-gallery="gallery1" data-title="039：仮コメントです。">
+        <div class="gallery-item" data-index="38">
+            <a href="images/photo039.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo039.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">039：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo040.jpg" class="glightbox" data-gallery="gallery1" data-title="040：仮コメントです。">
+        <div class="gallery-item" data-index="39">
+            <a href="images/photo040.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo040.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">040：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo041.jpg" class="glightbox" data-gallery="gallery1" data-title="041：仮コメントです。">
+        <div class="gallery-item" data-index="40">
+            <a href="images/photo041.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo041.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">041：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo042.jpg" class="glightbox" data-gallery="gallery1" data-title="042：仮コメントです。">
+        <div class="gallery-item" data-index="41">
+            <a href="images/photo042.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo042.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">042：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo043.jpg" class="glightbox" data-gallery="gallery1" data-title="043：仮コメントです。">
+        <div class="gallery-item" data-index="42">
+            <a href="images/photo043.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo043.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">043：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo044.jpg" class="glightbox" data-gallery="gallery1" data-title="044：仮コメントです。">
+        <div class="gallery-item" data-index="43">
+            <a href="images/photo044.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo044.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">044：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo045.jpg" class="glightbox" data-gallery="gallery1" data-title="045：仮コメントです。">
+        <div class="gallery-item" data-index="44">
+            <a href="images/photo045.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo045.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">045：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo046.jpg" class="glightbox" data-gallery="gallery1" data-title="046：仮コメントです。">
+        <div class="gallery-item" data-index="45">
+            <a href="images/photo046.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo046.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">046：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo047.jpg" class="glightbox" data-gallery="gallery1" data-title="047：仮コメントです。">
+        <div class="gallery-item" data-index="46">
+            <a href="images/photo047.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo047.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">047：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo048.jpg" class="glightbox" data-gallery="gallery1" data-title="048：仮コメントです。">
+        <div class="gallery-item" data-index="47">
+            <a href="images/photo048.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo048.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">048：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo049.jpg" class="glightbox" data-gallery="gallery1" data-title="049：仮コメントです。">
+        <div class="gallery-item" data-index="48">
+            <a href="images/photo049.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo049.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">049：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo050.jpg" class="glightbox" data-gallery="gallery1" data-title="050：仮コメントです。">
+        <div class="gallery-item" data-index="49">
+            <a href="images/photo050.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo050.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">050：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo051.jpg" class="glightbox" data-gallery="gallery1" data-title="051：仮コメントです。">
+        <div class="gallery-item" data-index="50">
+            <a href="images/photo051.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo051.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">051：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo052.jpg" class="glightbox" data-gallery="gallery1" data-title="052：仮コメントです。">
+        <div class="gallery-item" data-index="51">
+            <a href="images/photo052.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo052.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">052：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo053.jpg" class="glightbox" data-gallery="gallery1" data-title="053：仮コメントです。">
+        <div class="gallery-item" data-index="52">
+            <a href="images/photo053.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo053.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">053：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo054.jpg" class="glightbox" data-gallery="gallery1" data-title="054：仮コメントです。">
+        <div class="gallery-item" data-index="53">
+            <a href="images/photo054.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo054.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">054：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo055.jpg" class="glightbox" data-gallery="gallery1" data-title="055：仮コメントです。">
+        <div class="gallery-item" data-index="54">
+            <a href="images/photo055.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo055.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">055：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo056.jpg" class="glightbox" data-gallery="gallery1" data-title="056：仮コメントです。">
+        <div class="gallery-item" data-index="55">
+            <a href="images/photo056.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo056.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">056：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo057.jpg" class="glightbox" data-gallery="gallery1" data-title="057：仮コメントです。">
+        <div class="gallery-item" data-index="56">
+            <a href="images/photo057.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo057.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">057：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo058.jpg" class="glightbox" data-gallery="gallery1" data-title="058：仮コメントです。">
+        <div class="gallery-item" data-index="57">
+            <a href="images/photo058.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo058.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">058：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo059.jpg" class="glightbox" data-gallery="gallery1" data-title="059：仮コメントです。">
+        <div class="gallery-item" data-index="58">
+            <a href="images/photo059.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo059.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">059：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo060.jpg" class="glightbox" data-gallery="gallery1" data-title="060：仮コメントです。">
+        <div class="gallery-item" data-index="59">
+            <a href="images/photo060.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo060.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">060：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo061.jpg" class="glightbox" data-gallery="gallery1" data-title="061：仮コメントです。">
+        <div class="gallery-item" data-index="60">
+            <a href="images/photo061.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo061.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">061：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo062.jpg" class="glightbox" data-gallery="gallery1" data-title="062：仮コメントです。">
+        <div class="gallery-item" data-index="61">
+            <a href="images/photo062.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo062.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">062：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo063.jpg" class="glightbox" data-gallery="gallery1" data-title="063：仮コメントです。">
+        <div class="gallery-item" data-index="62">
+            <a href="images/photo063.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo063.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">063：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo064.jpg" class="glightbox" data-gallery="gallery1" data-title="064：仮コメントです。">
+        <div class="gallery-item" data-index="63">
+            <a href="images/photo064.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo064.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">064：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo065.jpg" class="glightbox" data-gallery="gallery1" data-title="065：仮コメントです。">
+        <div class="gallery-item" data-index="64">
+            <a href="images/photo065.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo065.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">065：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo066.jpg" class="glightbox" data-gallery="gallery1" data-title="066：仮コメントです。">
+        <div class="gallery-item" data-index="65">
+            <a href="images/photo066.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo066.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">066：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo067.jpg" class="glightbox" data-gallery="gallery1" data-title="067：仮コメントです。">
+        <div class="gallery-item" data-index="66">
+            <a href="images/photo067.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo067.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">067：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo068.jpg" class="glightbox" data-gallery="gallery1" data-title="068：仮コメントです。">
+        <div class="gallery-item" data-index="67">
+            <a href="images/photo068.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo068.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">068：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo069.jpg" class="glightbox" data-gallery="gallery1" data-title="069：仮コメントです。">
+        <div class="gallery-item" data-index="68">
+            <a href="images/photo069.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo069.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">069：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo070.jpg" class="glightbox" data-gallery="gallery1" data-title="070：仮コメントです。">
+        <div class="gallery-item" data-index="69">
+            <a href="images/photo070.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo070.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">070：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo071.jpg" class="glightbox" data-gallery="gallery1" data-title="071：仮コメントです。">
+        <div class="gallery-item" data-index="70">
+            <a href="images/photo071.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo071.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">071：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo072.jpg" class="glightbox" data-gallery="gallery1" data-title="072：仮コメントです。">
+        <div class="gallery-item" data-index="71">
+            <a href="images/photo072.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo072.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">072：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo073.jpg" class="glightbox" data-gallery="gallery1" data-title="073：仮コメントです。">
+        <div class="gallery-item" data-index="72">
+            <a href="images/photo073.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo073.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">073：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo074.jpg" class="glightbox" data-gallery="gallery1" data-title="074：仮コメントです。">
+        <div class="gallery-item" data-index="73">
+            <a href="images/photo074.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo074.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">074：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo075.jpg" class="glightbox" data-gallery="gallery1" data-title="075：仮コメントです。">
+        <div class="gallery-item" data-index="74">
+            <a href="images/photo075.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo075.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">075：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo076.jpg" class="glightbox" data-gallery="gallery1" data-title="076：仮コメントです。">
+        <div class="gallery-item" data-index="75">
+            <a href="images/photo076.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo076.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">076：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo077.jpg" class="glightbox" data-gallery="gallery1" data-title="077：仮コメントです。">
+        <div class="gallery-item" data-index="76">
+            <a href="images/photo077.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo077.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">077：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo078.jpg" class="glightbox" data-gallery="gallery1" data-title="078：仮コメントです。">
+        <div class="gallery-item" data-index="77">
+            <a href="images/photo078.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo078.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">078：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo079.jpg" class="glightbox" data-gallery="gallery1" data-title="079：仮コメントです。">
+        <div class="gallery-item" data-index="78">
+            <a href="images/photo079.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo079.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">079：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo080.jpg" class="glightbox" data-gallery="gallery1" data-title="080：仮コメントです。">
+        <div class="gallery-item" data-index="79">
+            <a href="images/photo080.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo080.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">080：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo081.jpg" class="glightbox" data-gallery="gallery1" data-title="081：仮コメントです。">
+        <div class="gallery-item" data-index="80">
+            <a href="images/photo081.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo081.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">081：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo082.jpg" class="glightbox" data-gallery="gallery1" data-title="082：仮コメントです。">
+        <div class="gallery-item" data-index="81">
+            <a href="images/photo082.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo082.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">082：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo083.jpg" class="glightbox" data-gallery="gallery1" data-title="083：仮コメントです。">
+        <div class="gallery-item" data-index="82">
+            <a href="images/photo083.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo083.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">083：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo084.jpg" class="glightbox" data-gallery="gallery1" data-title="084：仮コメントです。">
+        <div class="gallery-item" data-index="83">
+            <a href="images/photo084.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo084.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">084：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo085.jpg" class="glightbox" data-gallery="gallery1" data-title="085：仮コメントです。">
+        <div class="gallery-item" data-index="84">
+            <a href="images/photo085.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo085.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">085：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo086.jpg" class="glightbox" data-gallery="gallery1" data-title="086：仮コメントです。">
+        <div class="gallery-item" data-index="85">
+            <a href="images/photo086.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo086.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">086：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo087.jpg" class="glightbox" data-gallery="gallery1" data-title="087：仮コメントです。">
+        <div class="gallery-item" data-index="86">
+            <a href="images/photo087.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo087.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">087：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo088.jpg" class="glightbox" data-gallery="gallery1" data-title="088：仮コメントです。">
+        <div class="gallery-item" data-index="87">
+            <a href="images/photo088.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo088.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">088：仮コメントです。</div>
         </div>
     
-        <div class="gallery-item">
-            <a href="images/photo089.jpg" class="glightbox" data-gallery="gallery1" data-title="089：仮コメントです。">
+        <div class="gallery-item" data-index="88">
+            <a href="images/photo089.jpg" class="glightbox" data-gallery="gallery1">
                 <img src="images/photo089.jpg" alt="ロケ写真">
+                <div class="caption-overlay"></div>
             </a>
-            <div class="caption">089：仮コメントです。</div>
         </div>
     
-    </div>
-    <div class="download-wrapper">
-        <a href="https://drive.google.com/uc?export=download&id=1ZTIIMQkf0w7aVkOyCiPQE7I-U8wxzhJc" class="download-button">
-            📦 ZIPファイルを直接ダウンロード
-        </a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
         const lightbox = GLightbox({ touchNavigation: true, loop: true, zoomable: true });
+
+        fetch('captions.json')
+            .then(response => response.json())
+            .then(captions => {
+                document.querySelectorAll('.gallery-item').forEach((item, idx) => {
+                    const captionText = captions[idx] || "";
+                    const link = item.querySelector('a');
+                    const overlay = item.querySelector('.caption-overlay');
+                    if (link && overlay) {
+                        link.setAttribute('data-title', captionText);
+                        overlay.textContent = captionText;
+                        overlay.style.display = 'block';
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('キャプション読み込み失敗:', error);
+            });
     </script>
 </body>
 </html>
